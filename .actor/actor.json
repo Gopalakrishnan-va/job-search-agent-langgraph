@@ -1,0 +1,62 @@
+{
+	"actorSpecification": 1,
+	"name": "job-search-agent-langgraph",
+	"title": "AI Job Search Agent",
+	"description": "An AI-powered job search agent that analyzes resumes and finds matching job opportunities from LinkedIn and Indeed.",
+	"version": "0.1",
+	"buildTag": "latest",
+	"meta": {
+		"templateId": "python-langgraph"
+	},
+	"input": "input_schema.json",
+	"dockerfile": "./Dockerfile",
+	"pricing": {
+		"model": "pay_per_event",
+		"events": {
+			"resume_parse": {
+				"title": "Resume Parsing",
+				"description": "Charge for parsing and analyzing the resume",
+				"price": 0.10
+			},
+			"job_score": {
+				"title": "Job Scoring",
+				"description": "Charge for scoring each job against the resume",
+				"price": 0.02
+			},
+			"results_summary": {
+				"title": "Results Summary",
+				"description": "Charge for generating the final results summary",
+				"price": 0.10
+			}
+		}
+	},
+	"storages": {
+		"dataset": {
+			"actorSpecification": 1,
+			"title": "Job Search Results",
+			"views": {
+				"overview": {
+					"title": "Overview",
+					"transformation": {
+						"fields": [
+							"position",
+							"company",
+							"location",
+							"matchScore",
+							"applicationUrl"
+						]
+					},
+					"display": {
+						"component": "table",
+						"properties": {
+							"matchScore": {
+								"template": "{{value}}%",
+								"format": "number"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

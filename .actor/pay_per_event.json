@@ -1,0 +1,17 @@
+{
+    "resume_parse": {
+        "eventTitle": "Resume Parsing",
+        "eventDescription": "Charge for parsing and analyzing the resume",
+        "eventPriceUsd": 0.10
+    },
+    "job_score": {
+        "eventTitle": "Job Scoring",
+        "eventDescription": "Charge for scoring each job against the resume",
+        "eventPriceUsd": 0.02
+    },
+    "results_summary": {
+        "eventTitle": "Results Summary",
+        "eventDescription": "Charge for generating the final results summary",
+        "eventPriceUsd": 0.10
+    }
+} 

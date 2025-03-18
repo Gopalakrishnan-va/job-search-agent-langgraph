@@ -1,0 +1,53 @@
+{
+    "title": "Job Search Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "apifyApiToken": {
+            "title": "Apify API Token",
+            "type": "string",
+            "description": "Your Apify API token for accessing Apify services",
+            "editor": "textfield",
+            "isSecret": true
+        },
+        "openAiApiKey": {
+            "title": "OpenAI API Key",
+            "type": "string",
+            "description": "Your OpenAI API key for AI-powered analysis",
+            "editor": "textfield",
+            "isSecret": true
+        },
+        "resumeText": {
+            "title": "Resume Text",
+            "type": "string",
+            "description": "Full text of the resume",
+            "editor": "textarea"
+        },
+        "locationPreference": {
+            "title": "Location Preference",
+            "type": "string",
+            "description": "Preferred job location",
+            "editor": "textfield"
+        },
+        "workModePreference": {
+            "title": "Work Mode",
+            "type": "string",
+            "description": "Preferred work mode (Remote, Hybrid, On-site)",
+            "editor": "select",
+            "enum": ["Remote", "Hybrid", "On-site", "Any"]
+        },
+        "searchRadius": {
+            "title": "Search Radius (miles)",
+            "type": "integer",
+            "description": "Maximum distance from preferred location",
+            "default": 25
+        },
+        "minSalary": {
+            "title": "Minimum Salary",
+            "type": "integer",
+            "description": "Minimum acceptable salary",
+            "default": 0
+        }
+    },
+    "required": ["resumeText", "apifyApiToken", "openAiApiKey"]
+}

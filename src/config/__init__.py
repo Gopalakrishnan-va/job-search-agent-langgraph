@@ -1,0 +1,24 @@
+# Config package initialization
+from .settings import (
+    APIFY_API_TOKEN,
+    OPENAI_API_KEY,
+    OPENAI_MODEL,
+    ACTOR_IDS,
+    JOB_SEARCH_CONFIG,
+    INITIAL_SCORING_WEIGHTS,
+    FINAL_SCORING_WEIGHTS,
+    RETRY_ATTEMPTS,
+    RETRY_DELAY
+)
+
+__all__ = [
+    'APIFY_API_TOKEN',
+    'OPENAI_API_KEY',
+    'OPENAI_MODEL',
+    'ACTOR_IDS',
+    'JOB_SEARCH_CONFIG',
+    'INITIAL_SCORING_WEIGHTS',
+    'FINAL_SCORING_WEIGHTS',
+    'RETRY_ATTEMPTS',
+    'RETRY_DELAY'
+]
